@@ -1,0 +1,60 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.8
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/andrea-manzi/bd4nrg:
+      branch: main
+      repo: https://github.com/andrea-manzi/bd4nrg
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/andrea-manzi/bd4nrg git:
+        commands:
+        - /usr/bin/env sh .sqa/script.scanty-blue-barb.sh
+        container: qc.acc_nerdy-asparagus-dalmatian
+  QC.Doc:
+    repos:
+      github.com/andrea-manzi/bd4nrg find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-ivory-balinese.sh
+        container: qc.doc_silly-amethyst-dachshund
+      github.com/andrea-manzi/bd4nrg git:
+        commands:
+        - /usr/bin/env sh .sqa/script.squeaky-charcoal-bear.sh
+        container: qc.doc_cheeky-cerulean-quokka
+      github.com/andrea-manzi/bd4nrg markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flabby-auburn-setter.sh
+        container: qc.doc_thirsty-emerald-macaque
+  QC.Lic:
+    repos:
+      github.com/andrea-manzi/bd4nrg licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.slaphappy-amaranth-ragdoll.sh
+        container: qc.lic_clammy-olivine-dog
+  QC.Sty:
+    repos:
+      github.com/andrea-manzi/bd4nrg checkstyle:
+        commands:
+        - /usr/bin/env sh .sqa/script.leaky-azure-rattlesnake.sh
+        container: qc.sty_shabby-flax-toad
+      github.com/andrea-manzi/bd4nrg hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-cerulean-tang.sh
+        container: qc.sty_boozy-vermilion-dachshund
+      github.com/andrea-manzi/bd4nrg jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lumpy-ecru-termite.sh
+        container: qc.sty_jumpy-myrtle-forest
+  QC.Ver:
+    repos:
+      github.com/andrea-manzi/bd4nrg get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.ugly-green-gopher.sh
+        container: qc.ver_stuffy-saffron-goose
+timeout: 5400
