@@ -4,57 +4,57 @@ config:
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.8
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    github.com/andrea-manzi/bd4nrg:
+    github.com/andrea-manzi/BD4NRG:
       branch: main
-      repo: https://github.com/andrea-manzi/bd4nrg
+      repo: https://github.com/andrea-manzi/BD4NRG
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/andrea-manzi/bd4nrg git:
+      github.com/andrea-manzi/BD4NRG git:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-blue-barb.sh
-        container: qc.acc_nerdy-asparagus-dalmatian
+        - /usr/bin/env sh .sqa/script.freaky-rust-lobster.sh
+        container: qc.acc_breezy-gamboge-chameleon
   QC.Doc:
     repos:
-      github.com/andrea-manzi/bd4nrg find_doc_files.py:
+      github.com/andrea-manzi/BD4NRG find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-ivory-balinese.sh
-        container: qc.doc_silly-amethyst-dachshund
-      github.com/andrea-manzi/bd4nrg git:
+        - /usr/bin/env sh .sqa/script.slaphappy-maroon-kakapo.sh
+        container: qc.doc_flaky-azure-ferret
+      github.com/andrea-manzi/BD4NRG git:
         commands:
-        - /usr/bin/env sh .sqa/script.squeaky-charcoal-bear.sh
-        container: qc.doc_cheeky-cerulean-quokka
-      github.com/andrea-manzi/bd4nrg markdownlint:
+        - /usr/bin/env sh .sqa/script.bumpy-wisteria-russel.sh
+        container: qc.doc_bumpy-periwinkle-coral
+      github.com/andrea-manzi/BD4NRG markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.flabby-auburn-setter.sh
-        container: qc.doc_thirsty-emerald-macaque
+        - /usr/bin/env sh .sqa/script.bluesy-silver-barb.sh
+        container: qc.doc_pretty-cinnabar-lionfish
   QC.Lic:
     repos:
-      github.com/andrea-manzi/bd4nrg licensee:
+      github.com/andrea-manzi/BD4NRG licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.slaphappy-amaranth-ragdoll.sh
-        container: qc.lic_clammy-olivine-dog
+        - /usr/bin/env sh .sqa/script.crabby-fuchsia-stoat.sh
+        container: qc.lic_lovely-taupe-audemer
   QC.Sty:
     repos:
-      github.com/andrea-manzi/bd4nrg checkstyle:
+      github.com/andrea-manzi/BD4NRG checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-azure-rattlesnake.sh
-        container: qc.sty_shabby-flax-toad
-      github.com/andrea-manzi/bd4nrg hadolint:
+        - /usr/bin/env sh .sqa/script.snippy-platinum-crab.sh
+        container: qc.sty_baggy-emerald-setter
+      github.com/andrea-manzi/BD4NRG hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.gloppy-cerulean-tang.sh
-        container: qc.sty_boozy-vermilion-dachshund
-      github.com/andrea-manzi/bd4nrg jsonlint:
+        - /usr/bin/env sh .sqa/script.pokey-chestnut-lionfish.sh
+        container: qc.sty_bumpy-fuchsia-urchin
+      github.com/andrea-manzi/BD4NRG jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.lumpy-ecru-termite.sh
-        container: qc.sty_jumpy-myrtle-forest
+        - /usr/bin/env sh .sqa/script.snippy-gold-hippopotamus.sh
+        container: qc.sty_cozy-crimson-cat
   QC.Ver:
     repos:
-      github.com/andrea-manzi/bd4nrg get_git_tags.py:
+      github.com/andrea-manzi/BD4NRG get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-green-gopher.sh
-        container: qc.ver_stuffy-saffron-goose
+        - /usr/bin/env sh .sqa/script.gamy-magenta-starfish.sh
+        container: qc.ver_beady-emerald-ragdoll
 timeout: 5400
